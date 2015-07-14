@@ -119,6 +119,10 @@ on boot
     chown system system /sys/devices/soc/soc:fpc1020/fingerdown_wait
     chmod 0660 /sys/devices/soc/soc:fpc1020/fingerdown_wait
 
+    # MDP idle notifier
+    chown system graphics /sys/class/graphics/fb0/idle_time
+    chmod 0664 /sys/class/graphics/fb0/idle_time
+
 #Load WLAN driver
    insmod /vendor/lib/modules/qca_cld3/qca_cld3_wlan.ko
 
