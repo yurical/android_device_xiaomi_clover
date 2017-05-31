@@ -195,6 +195,7 @@ include device/qcom/sepolicy/sepolicy.mk
 
 # Treble
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
+PRODUCT_COMPATIBILITY_MATRIX_LEVEL_OVERRIDE := 27
 PRODUCT_FULL_TREBLE_OVERRIDE := true
 
 # Inherit from the proprietary version
