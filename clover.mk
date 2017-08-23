@@ -101,6 +101,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     XiaomiDoze
 
+# DRM
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-service
+
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
