@@ -270,8 +270,7 @@ PRODUCT_PACKAGES += \
     init.qcom.post_boot.sh \
     init.qcom.sh \
     init.qti.fm.sh \
-    init.qti.ims.sh \
-    init.qti.qseecomd.sh
+    init.qti.ims.sh
 
 PRODUCT_PACKAGES += \
     fstab.qcom \
