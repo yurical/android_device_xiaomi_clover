@@ -59,6 +59,9 @@ TARGET_KERNEL_CONFIG := clover_defconfig
 TARGET_BOARD_PLATFORM := sdm660
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno512
 
+# Audio
+USE_XML_AUDIO_POLICY_CONF := 1
+
 # Dex
 ifeq ($(HOST_OS),linux)
   ifneq ($(TARGET_BUILD_VARIANT),eng)
