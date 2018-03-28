@@ -278,7 +278,6 @@ PRODUCT_PACKAGES += \
     init.qcom.sensors.sh \
     init.qcom.sh \
     init.qcom.syspart_fixup.sh \
-    init.qcom.usb.sh \
     init.qcom.wifi.sh \
     init.qti.fm.sh \
     init.qti.ims.sh \
@@ -286,7 +285,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     fstab.qcom \
-    init.msm.usb.configfs.rc \
     init.qcom.factory.rc \
     init.qcom.rc \
     init.qcom.usb.rc \
