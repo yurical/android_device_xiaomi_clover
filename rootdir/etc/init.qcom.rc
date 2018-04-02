@@ -1051,11 +1051,6 @@ service qdmastatsd /system/vendor/bin/qdmastatsd
     user system
     group readproc system net_bw_stats radio
 
-service vppservice /vendor/bin/vppservice
-    class main
-    user media
-    group camera
-
 service chre /vendor/bin/chre
     class late_start
     user system
