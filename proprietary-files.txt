@@ -600,6 +600,10 @@ vendor/bin/hw/android.hardware.drm@1.0-service.widevine
 vendor/etc/init/android.hardware.drm@1.0-service.widevine.rc
 vendor/lib/libwvhidl.so
 
+# DRM - Widevine - from whyred
+vendor/lib/mediadrm/libwvdrmengine.so|56f4f50b82787d4709b82cbffe3e41a1e0e9569a
+vendor/lib64/mediadrm/libwvdrmengine.so|37c60196e0ebddf730f42e66a33a38120393fa1d
+
 # DSP
 vendor/etc/scve/facereco/gModel.dat
 vendor/lib/libsdsprpc.so
