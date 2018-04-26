@@ -34,6 +34,10 @@ PRODUCT_ENFORCE_RRO_TARGETS := \
 # Properties
 -include $(LOCAL_PATH)/vendor-props.mk
 
+# Additional native libraries
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
+
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService \
