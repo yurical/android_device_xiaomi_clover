@@ -269,7 +269,6 @@ PRODUCT_PACKAGES += \
     init.class_main.sh \
     init.huaqin.persist.sh \
     init.mdm.sh \
-    init.qcom.class_core.sh \
     init.qcom.coex.sh \
     init.qcom.crashdata.sh \
     init.qcom.efs.sync.sh \
