@@ -270,7 +270,6 @@ PRODUCT_PACKAGES += \
     init.huaqin.persist.sh \
     init.mdm.sh \
     init.qcom.coex.sh \
-    init.qcom.crashdata.sh \
     init.qcom.efs.sync.sh \
     init.qcom.post_boot.sh \
     init.qcom.sdio.sh \
