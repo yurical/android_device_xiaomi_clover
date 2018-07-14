@@ -255,6 +255,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.1-service-qti
 
+# QMI
+PRODUCT_PACKAGES += \
+    libjson
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.class_main.sh \
