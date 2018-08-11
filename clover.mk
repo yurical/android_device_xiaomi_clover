@@ -251,6 +251,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.1-service-qti
 
+# Prebuilts
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/modules/exfat.ko:system/lib/modules/exfat.ko \
+    $(LOCAL_PATH)/prebuilt/modules/qca_cld3_wlan.ko:system/lib/modules/qca_cld3_wlan.ko
+
 # QMI
 PRODUCT_PACKAGES += \
     libjson
