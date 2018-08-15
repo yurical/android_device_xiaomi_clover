@@ -11,3 +11,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk
 
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/xiaomi/clover/clover-vendor.mk)
+
+# Boot animation
+TARGET_SCREEN_HEIGHT := 1920
+TARGET_SCREEN_WIDTH := 1200
+
+# Characteristics
+PRODUCT_CHARACTERISTICS := tablet
+
+# Screen density
+PRODUCT_AAPT_CONFIG := large
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
