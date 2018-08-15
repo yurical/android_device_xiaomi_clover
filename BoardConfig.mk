@@ -198,5 +198,9 @@ BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 PRODUCT_COMPATIBILITY_MATRIX_LEVEL_OVERRIDE := 27
 PRODUCT_FULL_TREBLE_OVERRIDE := true
 
+# Vendor Init
+TARGET_INIT_VENDOR_LIB := libinit_clover
+TARGET_RECOVERY_DEVICE_MODULES := libinit_clover
+
 # Inherit from the proprietary version
 -include vendor/xiaomi/clover/BoardConfigVendor.mk
