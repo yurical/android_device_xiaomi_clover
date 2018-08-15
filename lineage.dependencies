@@ -1,0 +1,6 @@
+[
+  {
+    "repository": "android_kernel_xiaomi_clover",
+    "target_path": "kernel/xiaomi/clover"
+  }
+]
