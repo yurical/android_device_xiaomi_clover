@@ -268,7 +268,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     init.class_main.sh \
     init.huaqin.persist.sh \
-    init.qcom.efs.sync.sh \
     init.qcom.post_boot.sh \
     init.qcom.sdio.sh \
     init.qcom.sensors.sh \
