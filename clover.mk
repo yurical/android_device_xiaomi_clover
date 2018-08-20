@@ -27,6 +27,9 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
 
+# Properties
+-include $(LOCAL_PATH)/vendor-props.mk
+
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
