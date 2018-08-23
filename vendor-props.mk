@@ -196,6 +196,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.mobiledata=false \
     ro.telephony.default_network=22
 
+# Security Patch Level
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.build.security_patch=2018-09-01
+
 # Sensor
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.fingerprint=fpc \
