@@ -110,7 +110,6 @@ case "$baseband" in
     if [[ -z "$rild_status" || "$rild_status" = "stopped" ]] && [[ -z "$vendor_rild_status" || "$vendor_rild_status" = "stopped" ]]; then
       start vendor.qcrild
     fi
-    start vendor.ipacm-diag
     start vendor.ipacm
     case "$baseband" in
         "svlte2a" | "csfb")
