@@ -338,3 +338,12 @@ PRODUCT_PACKAGES += \
 # VNDK-SP
 PRODUCT_PACKAGES += \
     vndk-sp
+
+# Wi-Fi
+PRODUCT_PACKAGES += \
+    hostapd \
+    libqsap_sdk \
+    libQWiFiSoftApCfg \
+    libwifi-hal-qcom \
+    wpa_supplicant \
+    wpa_supplicant.conf
