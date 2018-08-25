@@ -85,6 +85,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libbt-vendor
 
+# Camera
+PRODUCT_PACKAGES += \
+    libxml2
+
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
