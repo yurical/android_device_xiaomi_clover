@@ -962,7 +962,7 @@ service vendor.atfwd /vendor/bin/ATFWD-daemon
     user system
     group system radio
 
-service hostapd_fst /vendor/bin/hw/hostapd -dd -g /data/vendor/wifi/hostapd/global
+service hostapd_fst /vendor/bin/hw/hostapd -g /data/vendor/wifi/hostapd/global
     interface android.hardware.wifi.hostapd@1.0::IHostapd default
     class main
     capabilities NET_ADMIN NET_RAW
@@ -971,7 +971,7 @@ service hostapd_fst /vendor/bin/hw/hostapd -dd -g /data/vendor/wifi/hostapd/glob
     disabled
     oneshot
 
-service vendor.wigig_hostapd /vendor/bin/hw/hostapd -dd  -j wigighostapd /data/vendor/wifi/hostapd/wigig_hostapd.conf
+service vendor.wigig_hostapd /vendor/bin/hw/hostapd -j wigighostapd /data/vendor/wifi/hostapd/wigig_hostapd.conf
     class late_start
     capabilities NET_ADMIN NET_RAW
     user wifi
