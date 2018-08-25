@@ -306,6 +306,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
+# RIL
+PRODUCT_PACKAGES += \
+    librmnetctl
+
 # Telephony
 PRODUCT_PACKAGES += \
     telephony-ext
