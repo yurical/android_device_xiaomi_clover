@@ -85,6 +85,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libxml2
 
+PRODUCT_PACKAGES += \
+    Snap
+
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
