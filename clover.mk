@@ -155,6 +155,10 @@ PRODUCT_PACKAGES += \
     android.hidl.base@1.0_system \
     android.hidl.manager@1.0-java
 
+# IMS
+PRODUCT_PACKAGES += \
+    ims-ext-common
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.class_main.sh \
