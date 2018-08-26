@@ -980,6 +980,9 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so
 vendor/radio/qcril_database/qcril.db
 
+# Radio - from sagit
+framework/qti-telephony-common.jar|3fc00ec80be50bc9b595fc9fe06ec26c832a72e3
+
 # Radio - IMS
 -app/ims/ims.apk
 -app/uceShimService/uceShimService.apk
