@@ -111,6 +111,7 @@ USE_XML_AUDIO_POLICY_CONF := 1
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth/include
+BOARD_HAVE_BLUETOOTH_QCOM := true
 
 # Dex
 ifeq ($(HOST_OS),linux)
