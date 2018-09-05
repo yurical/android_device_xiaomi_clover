@@ -41,6 +41,15 @@ on init
     write /dev/stune/foreground/schedtune.colocate 0
     write /dev/stune/top-app/schedtune.colocate 1
 
+# Add a cpuset for the camera daemon
+# We want all cores for camera
+    mkdir /dev/cpuset/camera-daemon
+    write /dev/cpuset/camera-daemon/cpus 0-7
+    write /dev/cpuset/camera-daemon/mems 0
+    chown cameraserver cameraserver /dev/cpuset/camera-daemon
+    chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
+    chmod 0660 /dev/cpuset/camera-daemon/tasks
+
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
@@ -51,19 +60,24 @@ on fs
     # these partition flashed on the device. Failure to mount any partition in fstab file
     # results in failure to launch late-start class.
 
-    #wait /dev/block/bootdevice/by-name/persist
-    #mount ext4 /dev/block/bootdevice/by-name/persist /persist nosuid nodev noatime barrier=1
-    #mkdir /persist/data 0700 system system
-    #mkdir /persist/bms 0700 root system
-    #restorecon_recursive /persist
+    wait /dev/block/bootdevice/by-name/persist
+    mount ext4 /dev/block/bootdevice/by-name/persist /persist nosuid nodev noatime barrier=1
+    mkdir /persist/data 0700 system system
+    mkdir /persist/bms 0700 root system
+    mkdir /persist/qti_fp 0700 system system
+    mkdir /persist/data 0700 system system
+    mkdir /persist/bms 0700 root system
+    mkdir /persist/sensors 0775 system system
+    write /persist/sensors/sensors_settings 1
+    chmod 0644 /persist/sensors/sensors_settings
+    restorecon_recursive /persist
     write /sys/kernel/boot_adsp/boot 1
 
 on post-fs
-    restorecon_recursive /persist
-    exec - root root -- /vendor/bin/init.huaqin.persist.sh
     start qseecomd
     exec - system system -- /vendor/bin/init.qti.qseecomd.sh
     write /dev/ipa 1
+
     # Update dm-verity state and set partition.*.verified properties
     verity_update_state
 
@@ -76,19 +90,14 @@ on post-fs-data
     mkdir /data/tombstones/wcnss 0771 system system
     mkdir /data/tombstones/dsps 0771 system system
     mkdir /data/vendor/hbtp 0750 system system
-    mkdir /persist/qti_fp 0700 system system
     mkdir /data/misc/seemp 0700 system system
     mkdir /data/misc/tloc 0700 system drmrpc
-    mkdir /persist/data 0700 system system
-    mkdir /persist/bms 0700 root system
     mkdir /data/thermal 0771 system system
     mkdir /data/thermal/config 0771 system system
     chmod 0664 /sys/class/thermal/thermal_message/sconfig
     chown system system /sys/class/thermal/thermal_message/sconfig
-#wangtao 20180227 add battery permission
     chmod 0644 /sys/class/power_supply/battery/charging_enabled
     chmod 0644 /sys/class/power_supply/battery/constant_charge_current_max
-    restorecon_recursive /persist
 
 on boot
     start rmt_storage
@@ -115,27 +124,17 @@ on boot
     chown system system /persist/speccfg/vendor_persist.prop
     chown system system /persist/speccfg/submask
     chown system system /persist/speccfg/partition
-    # wangtao open led permisions start
-    chown system system /sys/class/leds/red/blink
-    # wangtao open led permisions end
-    # wendell-20180423 added for fpc fingerprint
-    chown system system /sys/devices/soc/soc:fpc1020/compatible_all
-    chmod 0664 /sys/devices/soc/soc:fpc1020/compatible_all
-    chown system system /sys/devices/soc/soc:fpc1020/irq
-    chmod 0660 /sys/devices/soc/soc:fpc1020/irq
-    chown system system /sys/devices/soc/soc:fpc1020/hw_reset
-    chmod 0660 /sys/devices/platform/soc/soc:fpc1020/hw_reset
-    chown system system /sys/devices/soc/soc:fpc1020/wakeup_enable
-    chmod 0660 /sys/devices/soc/soc:fpc1020/wakeup_enable
-    #MIUI Patch modified for ZQL6019-4 by penghoubing@huaqin.com
-    chown system system /sys/devices/soc/soc:fpc1020/fingerdown_wait
-    chmod 0660 /sys/devices/soc/soc:fpc1020/fingerdown_wait
 
-    # wendell-20180423 end
-    start getpersistlog
-    #Load WLAN driver
-    insmod /vendor/lib/modules/qca_cld3/qca_cld3_wlan.ko
-    setprop wlan.driver.status "ok"
+#Load WLAN driver
+   insmod /vendor/lib/modules/qca_cld3/qca_cld3_wlan.ko
+   setprop wlan.driver.status "ok"
+
+# Set max charge current depends on in-call state
+on property:sys.incall=true
+    write /sys/class/power_supply/battery/constant_charge_current_max 500000
+
+on property:sys.incall=false
+    write /sys/class/power_supply/battery/constant_charge_current_max 2000000
 
 #Peripheral manager
 service per_mgr /system/vendor/bin/pm-service
@@ -173,7 +172,6 @@ on property:sys.shutdown.requested=*
 #on property:persist.usb.chgdisabled=0
 #    write /sys/class/power_supply/battery/charging_enabled 1
 #
-
 #service qrngd /system/bin/qrngd -f
 #   class main
 #   user root
@@ -336,104 +334,6 @@ service mdtpd /system/vendor/bin/mdtpd
     user root
     group system radio drmrpc
 
-service gsort /system/bin/gsort
-    user root
-    disabled
-    oneshot
-    seclabel u:r:smartpa:s0
-on property:sys.gsort=1
-    start gsort
-
-service gsorttest /system/bin/gsorttest.sh
-    user root
-    disabled
-    oneshot
-    seclabel u:r:smartpa:s0
-on property:sys.gsortcheck=1
-    start gsorttest
-
-# hq log start
-service  getaplog /system/bin/getlog -c
-    disabled
-    user root
-    oneshot
-    seclabel u:r:logoem:s0
-
-service  stopaplog /system/bin/getlog -s
-    disabled
-    user root
-    oneshot
-    seclabel u:r:logoem:s0
-
-on property:persist.sys.debug.getaplog=1
-    restart getaplog
-on property:persist.sys.debug.getaplog=0
-    start stopaplog
-
-service  getqxdmlog /system/bin/getlog -q
-    disabled
-    user root
-    oneshot
-    seclabel u:r:logoem:s0
-
-service  stopqxdmlog /system/bin/getlog -x
-    disabled
-    user root
-    oneshot
-    seclabel u:r:logoem:s0
-
-on property:persist.sys.debug.getqxdmlog=1
-    restart getqxdmlog
-on property:persist.sys.debug.getqxdmlog=0
-    start stopqxdmlog
-
-service  cpanrlog  /system/bin/sh /system/etc/cpanrlog.sh
-    disabled
-    user root
-    oneshot
-    seclabel u:r:logoem:s0
-
-service  cptomblog  /system/bin/sh /system/etc/cptomblog.sh
-    disabled
-    user root
-    oneshot
-    seclabel u:r:logoem:s0
-service  gettcpdumplog /system/bin/getlog -t
-    disabled
-    user root
-    oneshot
-    seclabel u:r:logoem:s0
-
-service  stoptcpdumplog /system/bin/getlog -p
-    disabled
-    user root
-    oneshot
-    seclabel u:r:logoem:s0
-
-service  getpersistlog /system/bin/getpersistlog
-    class main
-    user root
-    oneshot
-    seclabel u:r:logoem:s0
-
-on property:sys.boot_completed=1
-    start getpersistlog
-on property:persist.sys.debug.gettcpdump=1
-    restart gettcpdumplog
-on property:persist.sys.debug.gettcpdump=0
-    start stoptcpdumplog
-
-service getalllog /system/bin/sh /system/etc/getalllog.sh
-    disabled
-    user root
-    oneshot
-    seclabel u:r:logoem:s0
-on property:persist.sys.debug.getalllog=1
-    restart getalllog
-on property:persist.sys.debug.getalllog=0
-    stop getalllog
-# hq log end
-
 service pd_mapper /system/vendor/bin/pd-mapper
      class core
 
@@ -501,8 +401,6 @@ on charger
     start hvdcp_opti
     setprop sys.usb.configfs 1
     start power_off_alarm
-    # hq log
-    setprop debug.charger.on 1
 
 #
 #service nqs /system/bin/nqs
@@ -549,26 +447,3 @@ service smcinvoked /system/bin/smcinvoked
    user system
    group system
 
-# Add for ZQL5018-103 by Sven to set max charge current
-on property:sys.incall=true
-    write /sys/class/power_supply/battery/constant_charge_current_max 500000
-
-on property:sys.incall=false
-    write /sys/class/power_supply/battery/constant_charge_current_max 2000000
-
-#add for displayfeature
-service openad /system/vendor/bin/displayf_bin s 1
-    user root
-    oneshot
-    disabled
-
-on property:sys.hq.ad=1
-    start openad
-
-service closead /system/vendor/bin/displayf_bin s 0
-    user root
-    oneshot
-    disabled
-
-on property:sys.hq.ad=0
-    start closead

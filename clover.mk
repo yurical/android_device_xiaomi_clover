@@ -267,7 +267,6 @@ PRODUCT_COPY_FILES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.class_main.sh \
-    init.huaqin.persist.sh \
     init.qcom.post_boot.sh \
     init.qcom.sh \
     init.qti.fm.sh \
