@@ -493,3 +493,8 @@ service smcinvoked /system/bin/smcinvoked
    user system
    group system
 
+service readmac /vendor/bin/readmac
+    class main
+    user root
+    group oem_2901
+    oneshot
