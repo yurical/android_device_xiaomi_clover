@@ -900,6 +900,9 @@ vendor/lib64/libqmi_csi.so
 vendor/lib64/libqmi_encdec.so
 vendor/lib64/libsmemlog.so
 
+# QMI - from jason
+vendor/lib64/libqminvapi.so|14c0e6c8979fc22de5531d7d0a6754aaa4c80c09
+
 # Radio
 -app/datastatusnotification/datastatusnotification.apk
 -app/embms/embms.apk
