@@ -2449,6 +2449,10 @@ case "$target" in
             # re-enable thermal and BCL hotplug
             echo 1 > /sys/module/msm_thermal/core_control/enabled
 
+            # Support touch boost
+            echo 0:1401600 1:1401600 2:1401600 3:1401600 4:1401600 5:1401600 6:1401600 7:1401600 > /sys/module/cpu_boost/parameters/input_boost_freq
+            echo 60 > /sys/module/cpu_boost/parameters/input_boost_ms
+
             # Set Memory parameters
             configure_memory_parameters
 
@@ -2484,13 +2488,6 @@ case "$target" in
 
             # Start cdsprpcd only for sdm660 and disable for sdm630
             start vendor.cdsprpcd
-
-            # Start Host based Touch processing
-                case "$hw_platform" in
-                        "MTP" | "Surf" | "RCM" | "QRD" )
-                        start_hbtp
-                        ;;
-                esac
             ;;
         esac
         #Apply settings for sdm630 and Tahaa
