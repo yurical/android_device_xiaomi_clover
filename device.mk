@@ -228,10 +228,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.dualcam.lpm.enable=1 \
     persist.dualcam.defer.enable=1
 
-# ConfigPanel
-PRODUCT_PACKAGES += \
-    ConfigPanel
-
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
     cneapiclient \
