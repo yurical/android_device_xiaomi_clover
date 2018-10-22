@@ -36,9 +36,6 @@ on init
     write /dev/stune/foreground/schedtune.colocate 0
     write /dev/stune/top-app/schedtune.colocate 1
 
-    # chmod node /dev/gpio_rf
-    chmod 0644 /dev/gpio_rf
-
     chown system system /dev/lirc0
     chmod 0660 /dev/lirc0
 

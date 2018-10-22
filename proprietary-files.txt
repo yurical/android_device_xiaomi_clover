@@ -541,14 +541,6 @@ vendor/lib/mediadrm/libwvdrmengine.so|19b3abc9b99557b65a4a25e3e5de2dcaea62b2a4
 vendor/lib64/libwvhidl.so|c43592cf9de090d74e37f438c071256c86f31f9c
 vendor/lib64/mediadrm/libwvdrmengine.so|ab2e9d29646ffb7ab6b61925a6281a9fe60e5c48
 
-# Fingerprint sensor
-vendor/lib64/com.fingerprints.extension@1.0.so
-vendor/lib64/hw/fingerprint.fpc.so:vendor/lib64/hw/fingerprint.fpc.sdm660.so
-vendor/lib64/hw/fingerprint.goodix.so:vendor/lib64/hw/fingerprint.goodix.sdm660.so
-vendor/lib64/libgf_ca.so
-vendor/lib64/libgf_hal.so
-vendor/lib64/vendor.goodix.hardware.fingerprintextension@1.0.so
-
 # Gatekeeper - from B2N_sprout PPR1.180610.011
 vendor/lib/hw/gatekeeper.sdm660.so|bb56ae8a8fcc13148d1723044b8c617e6cf0b7ae
 vendor/lib64/hw/gatekeeper.sdm660.so|e8f32651e4bfff88fcc02c34eca6cd5f04a444aa
