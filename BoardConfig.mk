@@ -176,9 +176,6 @@ TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 # Keystore
 TARGET_PROVIDES_KEYMASTER := true
 
-# Lineage Hardware
-JAVA_SOURCE_OVERLAYS := org.lineageos.hardware|$(DEVICE_PATH)/lineagehw|**/*.java
-
 # Mainfest
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/manifest.xml
 DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/configs/compatibility_matrix.xml
