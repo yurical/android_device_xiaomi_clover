@@ -99,9 +99,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.multisim.config=dsds \
     sys.autosuspend.timeout=500000
 
-# Haters gonna hate..
-PRODUCT_CHARACTERISTICS := nosdcard
-
 # Audio
 PRODUCT_PACKAGES += \
     audiod \
