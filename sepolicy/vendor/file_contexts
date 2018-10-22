@@ -30,4 +30,4 @@
 /data/thermal(/.*)?                                 u:object_r:thermal_data_file:s0
 
 # Touchscreen
-/sys/devices/soc/c178000\.i2c/i2c-4/4-0020/input/input[0-9]+/wake_gesture                       u:object_r:sysfs_touchpanel:s0
+/sys/devices/soc/c177000.i2c/i2c-3/3-0038/fts_gesture_mode                       u:object_r:sysfs_touchpanel:s0

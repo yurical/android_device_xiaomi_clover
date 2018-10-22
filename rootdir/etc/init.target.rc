@@ -121,9 +121,8 @@ on boot
     chown wifi wifi /sys/module/wlan/parameters/fwpath
 
     # Touchscreen
-    chown system system /sys/bus/i2c/devices/4-0020/input/input1/wake_gesture
-    chown system system /sys/bus/i2c/devices/4-0020/input/input1/0dbutton
-    chown system system /sys/bus/i2c/devices/4-0020/input/input1/reversed_keys
+    chown system system /sys/devices/soc/c177000.i2c/i2c-3/3-0038/fts_gesture_mode
+    chmod 0660 /sys/devices/soc/c177000.i2c/i2c-3/3-0038/fts_gesture_mode
 
 #Peripheral manager
 service vendor.per_mgr /system/vendor/bin/pm-service

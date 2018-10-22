@@ -212,7 +212,7 @@ TARGET_USES_MKE2FS := true
 
 # Power
 TARGET_POWERHAL_VARIANT := qcom
-TARGET_TAP_TO_WAKE_NODE := "/sys/bus/i2c/devices/4-0020/input/input1/wake_gesture"
+TARGET_TAP_TO_WAKE_NODE := "/sys/devices/soc/c177000.i2c/i2c-3/3-0038/fts_gesture_mode"
 TARGET_USES_INTERACTION_BOOST := true
 
 # Recovery
