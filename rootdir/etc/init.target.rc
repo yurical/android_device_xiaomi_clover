@@ -120,36 +120,6 @@ on boot
     # Wifi firmware reload path
     chown wifi wifi /sys/module/wlan/parameters/fwpath
 
-    # LED full scale current is 8mA and limit it to 2mA
-    write /sys/class/leds/button-backlight/max_brightness 64
-    write /sys/class/leds/button-backlight1/max_brightness 64
-    write /sys/class/leds/white/max_brightness 64
-
-    # LED
-    chown system system /sys/class/leds/white/brightness
-    chmod 660 /sys/class/leds/white/brightness
-
-    chown system system /sys/class/leds/white/pause_lo
-    chmod 660 /sys/class/leds/white/pause_lo
-
-    chown system system /sys/class/leds/white/pause_hi
-    chmod 660 /sys/class/leds/white/pause_hi
-
-    chown system system /sys/class/leds/white/blink
-    chmod 660 /sys/class/leds/white/blink
-
-    chown system system /sys/class/leds/white/ramp_step_ms
-    chmod 660 /sys/class/leds/white/ramp_step_ms
-
-    chown system system /sys/class/leds/white/duty_pcts
-    chmod 660 /sys/class/leds/white/duty_pcts
-
-    chown system system /sys/class/leds/white/start_idx
-    chmod 660 /sys/class/leds/white/start_idx
-
-    chown system system /sys/class/leds/button-backlight1/brightness
-    chmod 660 /sys/class/leds/button-backlight1/brightness
-
     # Touchscreen
     chown system system /sys/bus/i2c/devices/4-0020/input/input1/wake_gesture
     chown system system /sys/bus/i2c/devices/4-0020/input/input1/0dbutton
