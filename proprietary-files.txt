@@ -690,9 +690,6 @@ vendor/lib/libvpplibrary.so|fc33228da9d1be65f7244c787e0ce20fc8bee654
 vendor/lib/libvqzip.so|c1c4f35456ff34b4baba373f18ed034a7d1e2721
 -vendor/lib64/libgpustats.so|79787eaed307f97ab3ce1864f6da39a096d9d153
 
-# NFC firmware
-vendor/firmware/libpn553_fw.so:vendor/lib/libpn553_fw.so
-
 # Perf - from B2N_sprout PPR1.180610.011
 vendor/bin/energy-awareness|85400bd358530f794fa57f346942a9a7c38df545
 vendor/bin/msm_irqbalance|117d7c8a8f6f12b3615ec8ab676231df93d277f1
