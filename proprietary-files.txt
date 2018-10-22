@@ -480,9 +480,6 @@ vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so|bb2c6f9dabeacf88ecd8a4210716664
 vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so|dd4aebcdd0f711b15ef173601ec121e7a91c5c63
 vendor/lib64/vendor.qti.latency@2.0.so|68fd46a6f26e2e101a6ecb0c40643fd5e137d716
 
-# Consumerir
-vendor/lib64/hw/consumerir.default.so
-
 # Display calibration data
 vendor/etc/calib.cfg
 vendor/etc/qdcm_calib_data_jdi_fhd_cmd_incell_dsi_panel.xml
