@@ -1,28 +1,26 @@
-Copyright (C) 2017 - The LineageOS Project
+Copyright (C) 2018 The LineageOS Project
 
-Device configuration for Xiaomi Mi Note 3
-==============
+Device configuration for Xiaomi Mi Pad 4
+=========================================
 
-The Xiaomi Mi Note 3 (codenamed _"clover"_) are high-end smartphones from Xiaomi.
+The Xiaomi Mi Pad 4 (codenamed _"clover"_) is a mid-range tablet from Xiaomi.
 
-It was announced in September 2017. Release date was September 2017.
+It was announced and released in June 2018.
 
 ## Device specifications
 
-|                  Device | Xiaomi Mi Note 3                                                         |
-|------------------------:|--------------------------------------------------------------------------|
-|                     SoC | Qualcomm SDM660 Snapdragon 660                                           |
-|                     CPU | Quad-core 2.2GHz Kryo 260 & quad-core 1.8GHz Kryo 260                    |
-|                     GPU | 850MHz Adreno 512                                                        |
-|                  Memory | 6 GB RAM (LPDDR4 1866MHz dual-channel)                                   |
-| Shipped Android version | 7.1                                                                      |
-|                 Storage | 64 GB (eMMC 5.1 Flash)                                                   |
-|                 Battery | Non-removable Li-Po 3500 mAh                                             |
-|              Dimensions | 152.6 x 73.95 x 7.6 mm                                                   |
-|                 Display | 1920 x 1080 px, 5.5 inches (403 PPI)                                     |
-|             Rear camera | Dual 12 MP, f/2.0, phase detection autofocus, dual-LED (dual tone) flash |
-|            Front camera | 16 MP, 2.0 µm pixel size                                                 |
+Basic   | Spec Sheet
+-------:|:-------------------------
+SoC     | Qualcomm SDM660 Snapdragon 660
+CPU     | Octa-core (4x2.2 GHz Kryo 260 & 4x1.8 GHz Kryo 260)
+GPU     | Adreno 512
+Memory  | 3/4 GB RAM
+Shipped Android Version | 8.1 with MIUI 9.0
+Storage | 32/64 GB
+Battery | Non-removable Li-Po 6000 mAh battery
+Display | 1200 x 1920 pixels, 16:10 ratio, 8.0 inches, IPS LCD (~283 ppi density)
+Camera  | 13 MP, f/2.0
 
 ## Device picture
 
-![Xiaomi Mi Note 3](https://i1.mifile.cn/f/i/17/minote3/specs_black.jpg "Xiaomi Mi Note 3 in black")
+![Xiaomi Mi Pad 4](https://i1.mifile.cn/f/i/18/lap4/13-1.jpg "Xiaomi Mi Pad 4 in black")
