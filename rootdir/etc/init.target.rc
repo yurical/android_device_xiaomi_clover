@@ -74,6 +74,10 @@ on post-fs-data
     mkdir /data/thermal 0771 system system
     mkdir /data/thermal/config 0771 system system
 
+    # Set permission for charger
+    chmod 0644 /sys/class/power_supply/battery/charging_enabled
+    chmod 0644 /sys/class/power_supply/battery/constant_charge_current_max
+
 on boot
     start rmt_storage
     start rfs_access
@@ -120,6 +124,13 @@ on boot
     # Touchscreen
     chown system system /sys/devices/soc/c177000.i2c/i2c-3/3-0038/fts_gesture_mode
     chmod 0660 /sys/devices/soc/c177000.i2c/i2c-3/3-0038/fts_gesture_mode
+
+# Set max charge current depends on in-call state
+on property:sys.incall=true
+    write /sys/class/power_supply/battery/constant_charge_current_max 500000
+
+on property:sys.incall=false
+    write /sys/class/power_supply/battery/constant_charge_current_max 2000000
 
 #Peripheral manager
 service vendor.per_mgr /system/vendor/bin/pm-service
