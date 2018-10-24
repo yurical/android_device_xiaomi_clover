@@ -21,7 +21,7 @@
 # definition file).
 #
 
-DEVICE_PATH := device/xiaomi/jason
+DEVICE_PATH := device/xiaomi/clover
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := sdm660
@@ -55,8 +55,8 @@ BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
 BOARD_RAMDISK_OFFSET     := 0x02000000
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-TARGET_KERNEL_SOURCE := kernel/xiaomi/jason
-TARGET_KERNEL_CONFIG := lineageos_jason_defconfig
+TARGET_KERNEL_SOURCE := kernel/xiaomi/clover
+TARGET_KERNEL_CONFIG := lineageos_clover_defconfig
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
@@ -225,7 +225,7 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/recovery.fstab
 TARGET_RIL_VARIANT := caf
 
 # Releasetools
-TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_jason
+TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_clover
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
 # Root
@@ -265,4 +265,4 @@ WIFI_HIDL_FEATURE_AWARE := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # inherit from the proprietary version
--include vendor/xiaomi/jason/BoardConfigVendor.mk
+-include vendor/xiaomi/clover/BoardConfigVendor.mk

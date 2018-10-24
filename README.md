@@ -3,7 +3,7 @@ Copyright (C) 2017 - The LineageOS Project
 Device configuration for Xiaomi Mi Note 3
 ==============
 
-The Xiaomi Mi Note 3 (codenamed _"jason"_) are high-end smartphones from Xiaomi.
+The Xiaomi Mi Note 3 (codenamed _"clover"_) are high-end smartphones from Xiaomi.
 
 It was announced in September 2017. Release date was September 2017.
 

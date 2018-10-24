@@ -18,7 +18,7 @@
 
 set -e
 
-DEVICE=jason
+DEVICE=clover
 VENDOR=xiaomi
 
 INITIAL_COPYRIGHT_YEAR=2017
