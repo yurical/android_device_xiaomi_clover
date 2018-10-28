@@ -96,7 +96,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     sys.vendor.shutdown.waittime=500 \
     ro.build.shutdown_timeout=0 \
     ro.frp.pst=/dev/block/bootdevice/by-name/frp \
-    persist.radio.multisim.config=dsds \
+    persist.radio.multisim.config=ssss \
     sys.autosuspend.timeout=500000
 
 # Audio
@@ -153,7 +153,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio_hal.period_size=192 \
     ro.vendor.audio.sdk.fluencetype=fluence \
     persist.vendor.audio.fluence.voicecall=true \
-    persist.vendor.audio.fluence.voicerec=false \
+    persist.vendor.audio.fluence.voicerec=true \
     persist.vendor.audio.fluence.speaker=true \
     vendor.audio.tunnel.encode=false \
     persist.vendor.audio.ras.enabled=false \
@@ -210,16 +210,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.HAL3.enabled=1 \
-    persist.camera.hist.high=20 \
-    persist.camera.hist.drc=1.2 \
-    persist.camera.sat.enable=1 \
-    persist.camera.instant.aec=1 \
-    persist.camera.ae.instant.bound=20 \
-    persist.camera.set.afd=4 \
-    persist.camera.feature.cac=1 \
-    persist.camera.fovc.enable=1 \
-    persist.dualcam.lpm.enable=1 \
-    persist.dualcam.defer.enable=1
+    persist.camera.preview.ubwc=0 \
+    persist.camera.stats.test=5
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
@@ -251,7 +243,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196610 \
-    ro.sf.lcd_density=480
+    ro.sf.lcd_density=320
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -438,7 +430,6 @@ PRODUCT_BOOT_JARS += \
     telephony-ext
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.radio.force_on_dc=true \
     persist.vendor.qti.telephony.vt_cam_interface=1
 
 # TextClassifier smart selection model files
