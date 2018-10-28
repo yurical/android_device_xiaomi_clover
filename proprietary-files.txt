@@ -636,6 +636,18 @@ vendor/lib64/libsdm-diag.so|25bab19a8c4453b3d20e3e1a71a0e8d3675b17b4
 vendor/lib64/libsdmextension.so|616b323d407e002035849a8674f1b0efb3390725
 vendor/lib64/libtinyxml2_1.so|9d5179eda8ce70b9a4014b144f9d23d33509fddc
 
+# Keymaster- from B2N_sprout PPR1.180610.011
+vendor/bin/hw/android.hardware.keymaster@3.0-service-qti|85f2221137d88d2aeefa67d5d92c24defe0ff18d
+vendor/etc/init/android.hardware.keymaster@3.0-service-qti.rc|573b7392c8997008204081165cfe81a11080745d
+vendor/lib/hw/android.hardware.keymaster@3.0-impl-qti.so|6ca9ff030680738d0259b5b4f82fe57608d0d515
+vendor/lib/libkeymasterdeviceutils.so|0765fc204e741b0ee6d863e5512b2615f9a43d1c
+vendor/lib/libkeymasterprovision.so|9e18873343a8f9961723921bad1bd94094f63e5f
+vendor/lib/libkeymasterutils.so|f6fee9b785ea264040d318d9d305b4a5438db75c
+vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so|c894b0847289c15ec2d201c69a66987fab1f8453
+vendor/lib64/libkeymasterdeviceutils.so|ffbf8d30cc4d41b24c2646529992da81cd794b7e
+vendor/lib64/libkeymasterprovision.so|01c113e2ddc4e2e5a2f62544d3f393bc31f15c8e
+vendor/lib64/libkeymasterutils.so|82a3f876f6f67752e4e56d7e656b88798c01fc6f
+
 # Keystore - from B2N_sprout PPR1.180610.011
 vendor/lib/hw/keystore.sdm660.so|990bc5ca05914f3df85320a31b26fae325e174e3
 vendor/lib64/hw/keystore.sdm660.so|ffd01591bd8a864cb2dbc6fd2c01fbd36ae54051
