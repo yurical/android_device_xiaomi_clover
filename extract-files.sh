@@ -64,6 +64,4 @@ sed -i \
     's/\/system\/etc\//\/vendor\/etc\//g' \
     "$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary/vendor/lib/libmmcamera2_sensor_modules.so
 
-patchelf --replace-needed android.frameworks.sensorservice@1.0.so android.frameworks.sensorservice@1.0-v27.so $DEVICE_BLOB_ROOT/vendor/lib/libvideorefiner.so
-
 "$MY_DIR"/setup-makefiles.sh
