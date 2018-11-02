@@ -21,8 +21,8 @@
 # definition file).
 #
 
-# Device was launched with N-MR1
-$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk)
+# Device was launched with O-MR1
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
 $(call inherit-product, vendor/xiaomi/clover/clover-vendor.mk)
 
