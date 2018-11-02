@@ -28,7 +28,7 @@ PRODUCT_NAME := lineage_clover
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := clover
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_MODEL := Mi Note 3
+PRODUCT_MODEL := MI PAD 4
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
