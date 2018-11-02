@@ -24,7 +24,6 @@
 /(vendor|system/vendor)/bin/readmac                 u:object_r:readmac_exec:s0
 
 # Sensors
-/(vendor|system/vendor)/bin/init\.panel_info\.sh    u:object_r:qti_init_shell_exec:s0
 /persist/PRSensorData\.txt                          u:object_r:sensors_persist_file:s0
 
 # Thermal-engine

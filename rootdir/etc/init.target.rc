@@ -530,11 +530,6 @@ service smcinvoked /system/bin/smcinvoked
    user system
    group system
 
-service panel-info-sh /vendor/bin/init.panel_info.sh
-    class core
-    user root
-    oneshot
-
 service remosaic_daemon /vendor/bin/remosaic_daemon
     class late_start
     user camera
