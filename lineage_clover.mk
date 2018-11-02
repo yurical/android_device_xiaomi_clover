@@ -35,8 +35,8 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE="clover" \
     PRODUCT_NAME="clover" \
-    PRIVATE_BUILD_DESC="clover-user 7.1.1 NMF26X V9.6.2.0.NCHMIFD release-keys"
+    PRIVATE_BUILD_DESC="clover-user 8.1.0 OPM1.171019.019 8.10.18 release-keys"
 
-BUILD_FINGERPRINT := "Xiaomi/clover/clover:7.1.1/NMF26X/V9.6.2.0.NCHMIFD:user/release-keys"
+BUILD_FINGERPRINT := "Xiaomi/clover/clover:8.1.0/OPM1.171019.019/8.10.18:user/release-keys"
 
 TARGET_VENDOR := Xiaomi
