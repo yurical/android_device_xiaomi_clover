@@ -57,7 +57,7 @@ BOARD_RAMDISK_OFFSET     := 0x02000000
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_SOURCE := kernel/xiaomi/clover
-TARGET_KERNEL_CONFIG := lineageos_clover_defconfig
+TARGET_KERNEL_CONFIG := clover_defconfig
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
